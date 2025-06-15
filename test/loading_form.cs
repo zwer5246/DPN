@@ -64,19 +64,19 @@ namespace test
             //}
         }
 
-        private async void loading_SqlConnection()
+        private async void loading_SqlConnection() // Првоерка подключения к MSSQL Server (базе данных)
         {
-            try
+            try // Обработка исключений при подключении к БД
             {
                 int counter_users;
                 await connection_check.OpenAsync();
                 pictureBox1.Image = test.Properties.Resources.done_medium.ToBitmap();
                 label1.Text = "Готово!";
-                using (SqlCommand cmdCount = new SqlCommand("select count(*) from test", connection_check))
+                using (SqlCommand cmdCount = new SqlCommand("select count(*) from test", connection_check)) // Сама функция свзяи с БД
                 {
                     counter_users = (int)cmdCount.ExecuteScalar();
                 }
-                login_form.SqlConnectionStatus(true, counter_users);
+                login_form.SqlConnectionStatus(true, counter_users); // Утсановка статуса подключения
                 complete = true;
             }
             catch (SqlException ex)

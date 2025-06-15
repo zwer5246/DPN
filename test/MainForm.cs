@@ -84,7 +84,7 @@ namespace test
                 EnableButtons();
             }
         }
-        private void EnableButtons()
+        private void EnableButtons() // Выключает кнопки
         {
             button1.Enabled = true;
             button2.Enabled = true;
@@ -104,16 +104,12 @@ namespace test
             статистикаПодключенияToolStripMenuItem.Enabled = false;
             menu1ToolStripMenuItem.Enabled = true;
         }
-        private void menu1ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void menu1ToolStripMenuItem_Click(object sender, EventArgs e) // Открытие формы авторизации
         {
             login_form newForm = new login_form(new MyDelegate1(SqlConnectionReturn), new MyDelegate2(EnableButtons));
             newForm.ShowDialog();
         }
-        private void testToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            dataGridView_main.Rows.Add();
-        }
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) // Кнопка отключения
         {
             DialogResult dialogResult = MessageBox.Show("Данное действие полностью отключит вас от сервера баз данных. Для повторного входа потребуется повторная авторизация.", "Внимание", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.OK)
@@ -135,18 +131,18 @@ namespace test
         {
 
         }
-        private void button4_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e) // Начало редактирования таблицы
         {
             start_redact();
             dataGridView_main.ReadOnly = false;
         }
-        private void button6_Click(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e) // Завершения редактирования таблицы
         {
             end_redact();
             dataGridView_main.ReadOnly = true;
             dataGridView_main.Rows.Clear();
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) // Обновить таблицу
         {
             button1.Enabled = false;
             dataGridView_main.Rows.Clear();
@@ -154,7 +150,7 @@ namespace test
             displayTable_mainTable("SELECT Count(*) FROM INFORMATION_SCHEMA.Columns where TABLE_NAME = 'Person1'", "SELECT Count(*) FROM Person1", "select * from Person1");
             button1.Enabled = true;
         }
-        private void displayTable_mainTable(string firstSQLQuery, string secondSQLQuery, string readerSQLQuery)
+        private void displayTable_mainTable(string firstSQLQuery, string secondSQLQuery, string readerSQLQuery) // Отображение главной таблицы
         {
             int counter_of_columns = 0, counter_of_rows = 0;
             if (connection_main == null)
@@ -245,7 +241,7 @@ namespace test
                 connection_main.Close();
             }
         }
-        private void getTree_stat()
+        private void getTree_stat() // Служебные функции
         {
             int counter_of_columns;
             SqlCommand cmdCount;
@@ -298,7 +294,7 @@ namespace test
                 Application.Exit();
             }
         }
-        private void treeView1_DoubleClick(object sender, EventArgs e)
+        private void treeView1_DoubleClick(object sender, EventArgs e) // Реакция на двойное нажатие по элементу дерева
         {
             button4.Enabled = true;
             dataGridView_main.Columns.Clear();
@@ -366,7 +362,7 @@ namespace test
             }
             connection_main.Close();
         }
-        bool date_test(string tester_date)
+        bool date_test(string tester_date) // Тестовая функциия, сейчас не используется
         {
             bool result = false;
             if (DateTime.TryParse(tester_date, out DateTime date))
@@ -375,7 +371,7 @@ namespace test
             }
             return result;
         }
-        bool phamilia_test(string phamilia)
+        bool phamilia_test(string phamilia) // Тестовая функциия, сейчас не используется
         {
             foreach (string s in persons)
             {
@@ -386,18 +382,18 @@ namespace test
             }
             return false;
         }
-        private void button5_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e) // Тестовая функциия, сейчас не используется
         {
             end_redact();
             dataGridView_main.ReadOnly = true;
             redact = true;
         }
-        private void статистикаПодключенияToolStripMenuItem_Click(object sender, EventArgs e)
+        private void статистикаПодключенияToolStripMenuItem_Click(object sender, EventArgs e) // Тестовая функциия, сейчас не используется
         {
             stats_form statsForm = new stats_form();
             statsForm.ShowDialog();
         }
-        private void dataGridView_main_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView_main_CellValueChanged(object sender, DataGridViewCellEventArgs e) // Проверка правильности ячейек при редактировании
         {
             int columnIndex = dataGridView_main.SelectedCells[0].ColumnIndex;
             int rowIndex = dataGridView_main.SelectedCells[0].RowIndex;
@@ -421,7 +417,7 @@ namespace test
                 }
             }
         }
-        private void dataGridView_main_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView_main_CellClick(object sender, DataGridViewCellEventArgs e) // Тестовая функциия, сейчас не используется
         {
             current_cell_value = (string)dataGridView_main.CurrentCell.Value;
         }

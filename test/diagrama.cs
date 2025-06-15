@@ -31,7 +31,7 @@ namespace test
             GeneratePieChart();
         }
 
-        private void GeneratePieChart()
+        private void GeneratePieChart() // Генерация круговой диаграммы
         {
             Dictionary<string, int> counts = new Dictionary<string, int>();
 

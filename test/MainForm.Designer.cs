@@ -30,19 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("1-семестр");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("2-семестр");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Посещаемость (по датам)", new System.Windows.Forms.TreeNode[] {
-            treeNode8,
-            treeNode9});
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("1-семестр");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("2-семестр");
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Посещаемость (по фамилиям)", new System.Windows.Forms.TreeNode[] {
-            treeNode11,
-            treeNode12});
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Безымянная группа", new System.Windows.Forms.TreeNode[] {
-            treeNode10,
-            treeNode13});
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("1-семестр");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("2-семестр");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Посещаемость (по датам)", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2});
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("1-семестр");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("2-семестр");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Посещаемость (по фамилиям)", new System.Windows.Forms.TreeNode[] {
+            treeNode4,
+            treeNode5});
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Безымянная группа", new System.Windows.Forms.TreeNode[] {
+            treeNode3,
+            treeNode6});
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menu1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выпоонитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -122,7 +122,7 @@
             this.testToolStripMenuItem.Name = "testToolStripMenuItem";
             this.testToolStripMenuItem.Size = new System.Drawing.Size(317, 22);
             this.testToolStripMenuItem.Text = "Выполнить пользовательский запрос T-SQL";
-            this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
+
             // 
             // импортВMicrosoftExcelToolStripMenuItem
             // 
@@ -224,22 +224,22 @@
             this.treeView1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.treeView1.Location = new System.Drawing.Point(12, 67);
             this.treeView1.Name = "treeView1";
-            treeNode8.Name = "Узел3";
-            treeNode8.Text = "1-семестр";
-            treeNode9.Name = "Узел4";
-            treeNode9.Text = "2-семестр";
-            treeNode10.Name = "Узел2";
-            treeNode10.Text = "Посещаемость (по датам)";
-            treeNode11.Name = "Узел10";
-            treeNode11.Text = "1-семестр";
-            treeNode12.Name = "Узел11";
-            treeNode12.Text = "2-семестр";
-            treeNode13.Name = "Узел5";
-            treeNode13.Text = "Посещаемость (по фамилиям)";
-            treeNode14.Name = "Node1";
-            treeNode14.Text = "Безымянная группа";
+            treeNode1.Name = "Узел3";
+            treeNode1.Text = "1-семестр";
+            treeNode2.Name = "Узел4";
+            treeNode2.Text = "2-семестр";
+            treeNode3.Name = "Узел2";
+            treeNode3.Text = "Посещаемость (по датам)";
+            treeNode4.Name = "Узел10";
+            treeNode4.Text = "1-семестр";
+            treeNode5.Name = "Узел11";
+            treeNode5.Text = "2-семестр";
+            treeNode6.Name = "Узел5";
+            treeNode6.Text = "Посещаемость (по фамилиям)";
+            treeNode7.Name = "Node1";
+            treeNode7.Text = "Безымянная группа";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode14});
+            treeNode7});
             this.treeView1.Size = new System.Drawing.Size(180, 355);
             this.treeView1.TabIndex = 4;
             this.treeView1.DoubleClick += new System.EventHandler(this.treeView1_DoubleClick);
@@ -418,7 +418,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(154, 34);
             this.button3.TabIndex = 14;
-            this.button3.Text = "Отрисовать идаграмму";
+            this.button3.Text = "Отрисовать диаграмму";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click_1);

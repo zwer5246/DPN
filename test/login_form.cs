@@ -20,7 +20,7 @@ namespace test
         static int number_of_users;
         private MyDelegate1 SqlConnectionReturN;
         private MyDelegate2 EnableButtons;
-        private void loading_start()
+        private void loading_start() // Анимация подключения к серверу
         {
             button1.Enabled = false;
             button2.Enabled = false;
@@ -30,13 +30,19 @@ namespace test
             loading_form.RetriveSQlConnection(connection_data);
             loadingForm.ShowDialog();
         }
-        private void loading_end()
+        private void loading_end() // Завершение Анимации подключения к серверу
         {
             button1.Enabled = true;
             button2.Enabled = true;
             pictureBox2.Enabled = true;
         }
-        public login_form(MyDelegate1 sender, MyDelegate2 sender2)
+
+        /// <summary>
+        /// Заполняет форму если данные были предварительно сохранены (При первой авторизации был выбран параметр "Запомнить авторизационные данные")
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="sender2"></param>
+        public login_form(MyDelegate1 sender, MyDelegate2 sender2) // Конструктор формы
         {
             InitializeComponent();
             SqlConnectionReturN = sender;
@@ -54,16 +60,16 @@ namespace test
                 textBox1.Enabled = false;
             }
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) // Проверка именни и пользователя
         {
-            if (textBox1.Text == string.Empty || textBox2.Text == string.Empty || textBox3.Text == string.Empty || textBox4.Text == string.Empty)
+            if (textBox1.Text == string.Empty || textBox2.Text == string.Empty || textBox3.Text == string.Empty || textBox4.Text == string.Empty) // Валидация полей
             {
                 MessageBox.Show("Одно или несколько из полей ввода авторизационных данных содержит недопустимые значения или они вовсе отсутствуют.",
                     "Ошибка",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
-            else
+            else // Првоерка правильности авторизационных данных
             {
                 string SQL_server_address = textBox1.Text;
                 string SQL_DB_name = textBox4.Text;
@@ -78,7 +84,6 @@ namespace test
                 {
                     connection_data = "Server=" + SQL_server_address + ";Database=" + SQL_DB_name + ";User Id=" + SQL_DB_login + ";Password=" + SQL_DB_password + ";Encrypt = false;MultipleActiveResultSets=True";
                 }
-                //connection_data = "Server=185.125.203.94;Database=Standart_BD;User Id=user1;Password=yt65sa%Poiwy;Encrypt=false;MultipleActiveResultSets=True";
                 loading_start();
                 if (succsess_connect1 == true)
                 {
@@ -113,7 +118,7 @@ namespace test
         {
             succsess_connect1 = succsess_connect;
         }
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void checkBox1_CheckedChanged(object sender, EventArgs e) // Блокировка полей, в случаее если логин и пароль были сохранены
         {
             if (checkBox1.Checked == false)
             {
