@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>Произодственная_практика__05._2023_</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Ресурсы\Иконки и изображения\Icon127.ico" />
+    <None Remove="Ресурсы\Иконки и изображения\Icon128.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Ресурсы\Иконки и изображения\Icon127.ico" />
+    <Resource Include="Ресурсы\Иконки и изображения\Icon128.ico" />
+  </ItemGroup>
+
+</Project>
